@@ -1,0 +1,48 @@
+/* pages/user/login/login.wxss */
+.container .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .logo image {
+  height: 150rpx;
+  width: 150rpx;
+  margin: 100rpx 0 40rpx 0;
+}
+.container .logo view {
+  font-size: 30rpx;
+  margin: 0 0 400rpx 0;
+}
+
+.container .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .btn .login {
+  height: 90rpx;
+  width: 600rpx;
+  background-color: #005BAC;
+  border-radius: 45rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+  color: white;
+  margin-bottom: 40rpx;
+  box-shadow: 2rpx 2rpx 4rpx #A1A1A1;
+}
+.container .btn .cancel {
+  height: 90rpx;
+  width: 600rpx;
+  border: 2rpx solid #005BAC;
+  border-radius: 45rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 30rpx;
+  color: #005BAC;
+  margin-bottom: 40rpx;
+  box-shadow: 2rpx 2rpx 4rpx #A1A1A1;
+}

@@ -1,0 +1,38 @@
+<!--pages/home/index/index.wxml-->
+<view class='container'>
+  <view class='card_1'>
+    <text>关于我们</text>
+    <image src='/images/logo.png'></image>
+  </view>
+
+  <swiper class='banner' previous-margin='30rpx' next-margin='30rpx'>
+    <block wx:for="{{banner}}" wx:key="{{index}}">
+      <swiper-item>
+        <view class='item'>
+          <view class='hr'></view>
+          <view class='title'>{{item.title}}</view>
+          <image src="{{item.url}}" mode='aspectFill'></image>
+          <view class='hr'></view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='card_2'>
+    <view class='name'>惠大揭阳侨中校友会</view>
+    <view class='desc'>
+      <view>我们创建于2013年04月18日</view>
+      <view>为惠州学院揭阳华侨高级中学学生官方认证校友会，我们是一个无利益，无危害，无黄赌毒的无产阶级群体！</view>
+    </view>
+    <view class='hr'></view>
+  </view>
+
+  <view class='card_3'>
+    <view class='title'>了解更多</view>
+    <view class='item' wx:for="{{articles}}" wx:key="{{index}}">
+      <image src="{{item.avatar}}"></image>
+      <text>{{item.title}}</text>
+      <view class='btn'>查看</view>
+    </view>
+  </view>
+</view>

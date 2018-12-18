@@ -1,0 +1,12 @@
+<!--pages/activity/detail/detail.wxml-->
+<view class='bottom_btn'>
+  <view class='card_1'>
+    <view class='btn' bindtap='goHome'>
+      <image src='/images/icon/home.png'></image>
+    </view>
+    <view class='btn'>
+      <image src='/images/icon/share.png'></image>
+    </view>
+  </view>
+  <view class='card_2' bindtap='goLogin'>我要报名</view>
+</view>

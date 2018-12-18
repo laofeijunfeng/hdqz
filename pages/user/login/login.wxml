@@ -1,0 +1,12 @@
+<!--pages/user/login/login.wxml-->
+<view class='container'>
+  <view class='logo'>
+    <image src='/images/logo.png'></image>
+    <view class='title'>惠大揭阳侨中校友会</view>
+  </view>
+
+  <view class='btn'>
+    <button class='login' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>微信登录</button>
+    <view class='cancel' bindtap='goBack'>取消</view>
+  </view>
+</view>

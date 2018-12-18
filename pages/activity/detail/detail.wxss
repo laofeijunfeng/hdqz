@@ -1,0 +1,31 @@
+/* pages/activity/detail/detail.wxss */
+.bottom_btn {
+  position: fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100vw;
+  display: flex;
+}
+.bottom_btn .card_1 {
+  display: flex;
+  background-color: #F8F8F8;
+}
+.bottom_btn .card_1 .btn {
+  height: 100rpx;
+  width: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.bottom_btn .card_1 .btn image {
+  height: 50rpx;
+  width: 50rpx;
+}
+.bottom_btn .card_2 {
+  flex-grow: 1;
+  background-color: #005BAC;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff;
+}

@@ -1,0 +1,87 @@
+/* pages/home/index/index.wxss */
+.container .card_1 {
+  padding: 0 40rpx 20rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .card_1 text {
+  font-size: 50rpx;
+  font-weight: 600;
+}
+.container .card_1 image {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.container .banner {
+  height: 560rpx;
+}
+.container .banner .item {
+  padding: 0 10rpx;
+}
+.container .banner .item .title {
+  margin: 20rpx 0;
+  font-size: 30rpx;
+  color: #A1A1A1;
+  height: 40rpx;
+}
+.container .banner .item image {
+  height: 414rpx;
+  width: 670rpx;
+  border-radius: 10rpx;
+  margin: 0 0 40rpx 0;
+}
+
+.container .card_2 {
+  padding: 30rpx 40rpx 0 40rpx;
+}
+.container .card_2 .name {
+  font-size: 50rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.container .card_2 .desc {
+  font-size: 28rpx;
+  color: #A1A1A1;
+  margin-bottom: 40rpx;
+}
+
+.container .card_3 {
+  padding: 40rpx;
+}
+.container .card_3 .title {
+  font-size: 50rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.container .card_3 .item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.container .card_3 .item image {
+  height: 120rpx;
+  width: 120rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.container .card_3 .item text {
+  flex-grow: 1;
+  width: 320rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  padding-right: 40rpx;
+}
+.container .card_3 .item .btn {
+  height: 60rpx;
+  width: 130rpx;
+  font-size: 28rpx;
+  color: #005BAC;
+  border-radius: 40rpx;
+  background-color: #F2F1F6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

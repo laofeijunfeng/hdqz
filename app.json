@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/index/index",
+    "pages/activity/index/index",
+    "pages/article/index/index",
+    "pages/activity/detail/detail",
+    "pages/user/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "惠大侨中",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "",
+    "selectedColor": "",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/index/index",
+        "iconPath": "images/tab/home.png",
+        "selectedIconPath": "images/tab/home_select.png"
+      },
+      {
+        "pagePath": "pages/activity/index/index",
+        "iconPath": "images/tab/activity.png",
+        "selectedIconPath": "images/tab/activity_select.png"
+      },
+      {
+        "pagePath": "pages/article/index/index",
+        "iconPath": "images/tab/article.png",
+        "selectedIconPath": "images/tab/article_select.png"
+      }
+    ]
+  }
+}

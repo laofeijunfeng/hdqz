@@ -1,0 +1,51 @@
+/* pages/activity/index/index.wxss */
+page {
+  background-color: #F8F8F8;
+}
+
+
+.container {
+  padding: 0 40rpx 40rpx 40rpx;
+}
+.container .item {
+  margin: 0 0 60rpx 0;
+}
+.container .item .card_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .item .card_1 .time .tmBegin {
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #A1A1A1;
+  letter-spacing: 2rpx;
+}
+.container .item .card_1 .time .week {
+  margin: 15rpx 0;
+  font-size: 50rpx;
+  font-weight: 600;
+}
+.container .item .card_1 .avatar image {
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+}
+
+.container .item .card_2 .title {
+  background-color: #005BAC;
+  padding: 40rpx;
+  font-size: 45rpx;
+  font-weight: 500;
+  color: #ffffff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  box-shadow: 4rpx 4rpx 50rpx #A1A1A1;
+}
+.container .item .card_2 .logo image {
+  height: 670rpx;
+  width: 670rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  box-shadow: 4rpx 4rpx 50rpx #A1A1A1;
+}

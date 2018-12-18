@@ -1,0 +1,21 @@
+<!--pages/activity/index/index.wxml-->
+<view class='container'>
+  <view class='item' wx:for="{{activity}}" wx:key="{{index}}" bindtap='goDetail'>
+    <view class='card_1'>
+      <view class='time'>
+        <view class='tmBegin'>{{item.tmBegin}}</view>
+        <view class='week'>{{item.week}}</view>
+      </view>
+      <view class='avatar'>
+        <image src="{{item.avatar}}"></image>
+      </view>
+    </view>
+
+    <view class='card_2'>
+      <view class='title'>{{item.title}}</view>
+      <view class='logo'>
+        <image src="{{item.logo}}" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+</view>
