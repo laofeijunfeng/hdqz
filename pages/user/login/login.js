@@ -1,18 +1,22 @@
 // pages/user/login/login.js
+import { Api } from '../../../utils/api.js'
+let api = new Api()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    code: '',
+    userDetail: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -26,7 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUserCode()
   },
 
   /**
@@ -69,5 +73,50 @@ Page({
    */
   goBack: function () {
     wx.navigateBack({})
+  },
+
+  getUserCode: function () {
+    var that = this
+    wx.login({
+      success: function (res) {
+        that.setData({
+          code: res.code
+        })
+      }
+    })
+  },
+
+  getUserInfo: function (e) {
+    var errMsg = e.detail.errMsg;
+    if (errMsg == "getUserInfo:ok") {
+      this.userLogin(e.detail)
+    } else {
+      wx.showToast({
+        title: '用户登录失败',
+        icon: 'none'
+      })
+    }
+  },
+
+  userLogin: function (userDetail) {
+    var that = this
+    api.userLogin({
+      data: {
+        code: this.data.code,
+        encryptedData: userDetail.encryptedData,
+        iv: userDetail.iv
+      },
+      success: function (res) {
+        var userToken = res.data.obj.token
+        getApp().globalData.userToken = userToken
+        wx.setStorage({
+          key: 'userToken',
+          data: userToken,
+        })
+        wx.navigateBack({
+
+        })
+      }
+    })
   }
 })

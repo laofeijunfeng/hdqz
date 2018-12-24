@@ -53,7 +53,7 @@ class Http {
       },
       error: function (res) {
         var code = res.data.code
-        if (code == 1100) {
+        if (code == 999) {
           that.goLogin()
         } else {
           that.showErrMsg(res.data.message)

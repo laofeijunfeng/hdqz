@@ -1,2 +1,37 @@
 <!--pages/user/index/index.wxml-->
-<text>pages/user/index/index.wxml</text>
+<view class='container'>
+  <view class='userInfo'>
+    <block wx:if="{{userInfo == null}}">
+      <image src='/images/icon/avatar_default.png'></image>
+    </block>
+    <block wx:else>
+      <image src="{{userInfo.avatar}}"></image>
+      <view>
+        <view class='name'>{{userInfo.nickname}}</view>
+        <view class='openid'>{{userInfo.openid}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class='card'>
+    <text>我的项目</text>
+    <image src='/images/icon/more.png'></image>
+  </view>
+
+  <view class='card'>
+    <text>我的参与</text>
+    <image src='/images/icon/more.png'></image>
+  </view>
+
+  <view class='card'>
+    <text>我的名片</text>
+    <image src='/images/icon/more.png'></image>
+  </view>
+
+  <view class='card login' wx:if="{{userInfo == null}}" bindtap='login'>
+    <text>去登录</text>
+  </view>
+  <view class='card logout' wx:else bindtap='logout'>
+    <text>退出登录</text>
+  </view>
+</view>

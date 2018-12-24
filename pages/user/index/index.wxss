@@ -1,1 +1,51 @@
 /* pages/user/index/index.wxss */
+page {
+  background-color: #F1F1F7;
+}
+
+.container {
+  padding: 40rpx 0;
+}
+.container .userInfo {
+  background-color: #ffffff;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  margin: 40rpx 0;
+  padding: 0 40rpx;
+}
+.container .userInfo image {
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.container .userInfo > view .name {
+  font-size: 28rpx;
+}
+.container .userInfo > view .openid {
+  font-size: 25rpx;
+  color: #A1A1A1;
+}
+
+.container .card {
+  height: 100rpx;
+  background-color: #ffffff;
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.container .card text {
+  font-size: 30rpx;
+}
+.container .card image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.container .logout, .container .login {
+  color: #005BAC;
+  justify-content: space-around;
+}

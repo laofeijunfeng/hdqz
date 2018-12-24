@@ -1,11 +1,16 @@
 // pages/user/index/index.js
+import { Api } from '../../../utils/api.js'
+import { Prompt } from '../../../utils/prompt.js'
+let api = new Api()
+let prompt = new Prompt()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null
   },
 
   /**
@@ -26,7 +31,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.userInfo == null) {
+      this.getUserInfo()
+    }
   },
 
   /**
@@ -62,5 +69,47 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 自定义方法
+   */
+  getUserInfo: function () {
+    var that = this
+    api.getUserInfo({
+      success: function (res) {
+        that.setData({
+          userInfo: res.data.obj
+        })
+      }
+    })
+  },
+
+  logout: function () {
+    var that = this
+    prompt.showModal({
+      title: '提示',
+      content: '是否确定退出登陆',
+      confirmText: '退出',
+      confirm: function () {
+        wx.showLoading({
+          title: '正在退出',
+        })
+        that.setData({
+          userInfo: null
+        })
+        wx.removeStorageSync('userToken')
+        getApp().globalData.userToken = ''
+        setTimeout(function () {
+          wx.hideLoading()
+        }, 1000)
+      }
+    })
+  },
+
+  login: function () {
+    wx.navigateTo({
+      url: '/pages/user/login/login',
+    })
   }
 })
