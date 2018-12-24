@@ -29,10 +29,10 @@
 
   <view class='card_3'>
     <view class='title'>了解更多</view>
-    <view class='item' wx:for="{{articles}}" wx:key="{{index}}">
+    <view class='item' wx:for="{{article}}" wx:key="{{index}}" >
       <image src="{{item.avatar}}"></image>
       <text>{{item.title}}</text>
-      <view class='btn'>查看</view>
+      <view class='btn' bindtap='goArticleDetail' data-article-id="{{item.id}}">查看</view>
     </view>
   </view>
 </view>

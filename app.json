@@ -4,7 +4,9 @@
     "pages/activity/index/index",
     "pages/article/index/index",
     "pages/activity/detail/detail",
-    "pages/user/login/login"
+    "pages/user/login/login",
+    "pages/user/index/index",
+    "pages/article/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,26 +15,29 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "",
-    "selectedColor": "",
+    "color": "#bfbfbf",
+    "selectedColor": "#005BAC",
     "backgroundColor": "#ffffff",
     "borderStyle": "white",
     "position": "bottom",
     "list": [
       {
         "pagePath": "pages/home/index/index",
+        "text": "主页",
         "iconPath": "images/tab/home.png",
         "selectedIconPath": "images/tab/home_select.png"
       },
       {
         "pagePath": "pages/activity/index/index",
+        "text": "活动",
         "iconPath": "images/tab/activity.png",
         "selectedIconPath": "images/tab/activity_select.png"
       },
       {
-        "pagePath": "pages/article/index/index",
-        "iconPath": "images/tab/article.png",
-        "selectedIconPath": "images/tab/article_select.png"
+        "pagePath": "pages/user/index/index",
+        "text": "我的",
+        "iconPath": "images/tab/me.png",
+        "selectedIconPath": "images/tab/me_select.png"
       }
     ]
   }

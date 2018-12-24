@@ -1,23 +1,18 @@
-// pages/home/index/index.js
-import { Api } from '../../../utils/api.js'
-let api = new Api()
-
+// pages/article/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banner: [],
-    article: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getBanner()
-    this.getArticle()
+
   },
 
   /**
@@ -67,37 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /**
-   * 自定义方法
-   */
-  getBanner: function () {
-    var that = this
-    api.getHomeBanner({
-       success: function (res) {
-         that.setData({
-           banner: res.data.obj.banners
-         })
-       }
-    })
-  },
-
-  getArticle: function () {
-    var that = this
-    api.getHomeArticle({
-      success: function (res) {
-        that.setData({
-          article: res.data.obj.articles
-        })
-      }
-    })
-  },
-
-  goArticleDetail: function (e) {
-    var articleId = e.currentTarget.dataset.articleId
-    wx.navigateTo({
-      url: '/pages/article/detail/detail?articleId=' + articleId,
-    })
   }
 })
