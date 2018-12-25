@@ -14,17 +14,26 @@
   </view>
 
   <view class='card'>
-    <text>我的项目</text>
+    <view>
+      <image src='/images/icon/my_activity.png'></image>
+      <text>我的活动</text>
+    </view>
     <image src='/images/icon/more.png'></image>
   </view>
 
   <view class='card'>
-    <text>我的参与</text>
+    <view>
+      <image src='/images/icon/join_activity.png'></image>
+      <text>我的参与</text>
+    </view>
     <image src='/images/icon/more.png'></image>
   </view>
 
   <view class='card'>
-    <text>我的名片</text>
+    <view>
+      <image src='/images/icon/my_card.png'></image>
+      <text>我的名片</text>
+    </view>
     <image src='/images/icon/more.png'></image>
   </view>
 

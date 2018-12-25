@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import '/style/weui.wxss';
+
 .hr {
   width: 100%;
   border-bottom: 1rpx solid #D6D6D6;

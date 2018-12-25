@@ -37,12 +37,21 @@ page {
   align-items: center;
   margin-bottom: 40rpx;
 }
-.container .card text {
-  font-size: 30rpx;
-}
-.container .card image {
+.container .card > image {
   height: 40rpx;
   width: 40rpx;
+}
+.container .card > view {
+  display: flex;
+  align-items: center;
+}
+.container .card > view image {
+  height: 35rpx;
+  width: 35rpx;
+  margin-right: 10rpx;
+}
+.container .card > view text {
+  font-size: 30rpx;
 }
 
 .container .logout, .container .login {

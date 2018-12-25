@@ -1,4 +1,6 @@
 import { config } from '../config.js'
+import { Prompt } from './prompt.js'
+let prompt = new Prompt()
 
 class Http {
   constructor() {
@@ -90,16 +92,14 @@ class Http {
   goLogin() {
     wx.removeStorage({ key: 'userToken' })
     getApp().globalData.userToken = ''
-    wx.showModal({
+    prompt.showModal({
       title: '提示',
       content: '用户未登录',
       confirmText: '去登录',
-      success: function (res) {
-        if (res.confirm) {
-          wx.navigateTo({
-            url: '/pages/user/login/login',
-          })
-        }
+      confirm: function () {
+        wx.navigateTo({
+          url: '/pages/user/login/login',
+        })
       }
     })
   }

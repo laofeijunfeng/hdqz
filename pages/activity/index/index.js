@@ -86,5 +86,11 @@ Page({
     wx.navigateTo({
       url: '/pages/activity/detail/detail'
     })
+  },
+
+  goCreateActivity: function () {
+    wx.navigateTo({
+      url: '/pages/activity/create/create',
+    })
   }
 })

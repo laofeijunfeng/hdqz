@@ -1,4 +1,8 @@
 <!--pages/activity/index/index.wxml-->
+<view class='add'>
+  <view class='btn' bindtap='goCreateActivity'>+</view>
+</view>
+
 <view class='container'>
   <view class='item' wx:for="{{activity}}" wx:key="{{index}}" bindtap='goDetail'>
     <view class='card_1'>

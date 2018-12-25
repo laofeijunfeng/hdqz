@@ -6,7 +6,8 @@
     "pages/activity/detail/detail",
     "pages/user/login/login",
     "pages/user/index/index",
-    "pages/article/detail/detail"
+    "pages/article/detail/detail",
+    "pages/activity/create/create"
   ],
   "window": {
     "backgroundTextStyle": "light",

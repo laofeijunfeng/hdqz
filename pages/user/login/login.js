@@ -99,6 +99,9 @@ Page({
   },
 
   userLogin: function (userDetail) {
+    wx.showLoading({
+      title: '正在登录',
+    })
     var that = this
     api.userLogin({
       data: {
@@ -116,6 +119,9 @@ Page({
         wx.navigateBack({
 
         })
+      },
+      complete: function () {
+        wx.hideLoading()
       }
     })
   }

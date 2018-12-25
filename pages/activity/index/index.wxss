@@ -1,14 +1,30 @@
 /* pages/activity/index/index.wxss */
-page {
-  background-color: #F8F8F8;
+.add {
+  height: 100rpx;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
 }
-
+.add .btn {
+  height: 70rpx;
+  width: 670rpx;
+  border-radius: 40rpx;
+  border: 2rpx dashed #005BAC;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #005BAC;
+}
 
 .container {
-  padding: 0 40rpx 40rpx 40rpx;
+  padding: 120rpx 40rpx 40rpx 40rpx;
 }
 .container .item {
-  margin: 0 0 60rpx 0;
+  margin-bottom: 60rpx;
 }
 .container .item .card_1 {
   display: flex;
@@ -32,6 +48,10 @@ page {
   border-radius: 50%;
 }
 
+.container .item .card_2 {
+  border-radius: 20rpx;
+  box-shadow: 10rpx 10rpx 50rpx #A1A1A1;
+}
 .container .item .card_2 .title {
   background-color: #005BAC;
   padding: 40rpx;
@@ -40,12 +60,10 @@ page {
   color: #ffffff;
   border-top-left-radius: 20rpx;
   border-top-right-radius: 20rpx;
-  box-shadow: 4rpx 4rpx 50rpx #A1A1A1;
 }
 .container .item .card_2 .logo image {
   height: 670rpx;
   width: 670rpx;
   border-bottom-left-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
-  box-shadow: 4rpx 4rpx 50rpx #A1A1A1;
 }
