@@ -1,33 +1,28 @@
 // pages/activity/index/index.js
+import { Api } from '../../../utils/api.js'
+import { FormTime } from '../../../utils/formTime.js'
+let api = new Api()
+let formTime = new FormTime()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activity: [
-      {
-        'tmBegin': '12月18号',
-        'week': '星期二',
-        'avatar': '/images/test/avatar.jpg',
-        'title': '冬至吃汤圆报名啦！！！',
-        'logo': '/images/test/logo.jpg'
-      },
-      {
-        'tmBegin': '12月18号',
-        'week': '星期二',
-        'avatar': '/images/test/avatar.jpg',
-        'title': '冬至吃汤圆报名啦！！！冬至吃汤圆报名啦！！！冬至吃汤圆报名啦！！！',
-        'logo': '/images/test/logo.jpg'
-      }
-    ]
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      pageNum: 1,
+      pages: 1,
+      activity: []
+    })
+    this.getAllActivity()
   },
 
   /**
@@ -92,5 +87,29 @@ Page({
     wx.navigateTo({
       url: '/pages/activity/create/create',
     })
+  },
+
+  getAllActivity: function () {
+    var that = this
+    var pageNum = this.data.pageNum
+    var pages = this.data.pages
+    if (pageNum <= pages) {
+      api.getAllActivity({
+        data: {
+          pageNum: pageNum
+        },
+        success: function (res) {
+          var activities = res.data.obj.activities
+          activities.forEach((item) => {
+            item.tmBegin = formTime.formatTime(item.tmBegin, 'Y年M月D')
+          })
+          that.setData({
+            activity: that.data.activity.concat(activities),
+            pages: res.data.obj.pages,
+            pageNum: pageNum + 1
+          })
+        }
+      })
+    }
   }
 })

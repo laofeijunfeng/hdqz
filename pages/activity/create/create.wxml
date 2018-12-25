@@ -1,101 +1,110 @@
 <!--pages/activity/create/create.wxml-->
 <view class='container'>
-  <view class='avatar' bindtap='chooseImage'>
-    <image wx:if="{{avatar.length > 0}}" src="{{avatar}}" mode='aspectFill'></image>
-    <text wx:else>上传头像</text>
-  </view>
-</view>
-
-<view class="weui-cells__title">活动标题（必填）</view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入标题" bindinput='bindInput' data-input-type='title' />
-        </view>
+  <block wx:if="{{userInfo == null}}">
+    <view class='no_login'>
+      <image src='/images/icon/no_login.png'></image>
+      <view class='desc'>用户未登录</view>
+      <view class='btn' bindtap='goLogin'>去登录</view>
     </view>
-</view>
-
-<view class="weui-cells__title">活动简介（必填）</view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell">
-        <view class="weui-cell__bd">
-            <textarea class="weui-textarea" placeholder="请输入简介" style="height: 3.3em" bindinput='bindInput' data-input-type='description' />
-            <view class="weui-textarea-counter">0/200</view>
-        </view>
+  </block>
+  <block wx:else>
+    <view class='avatar' bindtap='chooseImage'>
+      <image wx:if="{{avatar.length > 0}}" src="{{avatar}}" mode='aspectFill'></image>
+      <text wx:else>上传头像</text>
     </view>
-</view>
 
-<view class="weui-cells__title">地址（必填）</view>
-<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cells__title">活动标题（必填）</view>
     <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell" bindtap='chooseLocation'>
-        <view class="weui-cell__bd">选择地址</view>
-        <view class="weui-cell__ft">{{address.name}}</view>
-      </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入标题" bindinput='bindInput' data-input-type='title' />
+            </view>
+        </view>
     </view>
-</view>
 
-<view class="weui-cells__title">活动时间（必填）</view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">活动开始</view>
-        </view>
-        <view class="weui-cell__bd">
-            <picker mode="date" value="{{tmAvtivityBegin}}" start="2019-01-01" end="2030-01-01" bindchange="bindDateChange" data-tm-type='tmAvtivityBegin'>
-                <view class="weui-input">{{tmAvtivityBegin}}</view>
-            </picker>
+    <view class="weui-cells__title">活动简介（必填）</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd">
+                <textarea class="weui-textarea" placeholder="请输入简介" style="height: 3.3em" bindinput='bindInput' data-input-type='description' />
+                <view class="weui-textarea-counter">0/200</view>
+            </view>
         </view>
     </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">报名开始</view>
-        </view>
-        <view class="weui-cell__bd">
-            <picker mode="date" value="{{tmSignBegin}}" start="2019-01-01" end="2030-01-01" bindchange="bindDateChange" data-tm-type='tmSignBegin'>
-                <view class="weui-input">{{tmSignBegin}}</view>
-            </picker>
-        </view>
-    </view>
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-            <view class="weui-label">报名结束</view>
-        </view>
-        <view class="weui-cell__bd">
-            <picker mode="date" value="{{tmSignEnd}}" start="2019-01-01" end="2020-01-01" bindchange="bindDateChange" data-tm-type='tmSignEnd'>
-                <view class="weui-input">{{tmSignEnd}}</view>
-            </picker>
-        </view>
-    </view>
-</view>
 
-<!-- <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_switch">
-        <view class="weui-cell__bd">是否公开报名人数</view>
-        <view class="weui-cell__ft">
-            <switch checked color='#005BAC' />
+    <view class="weui-cells__title">地址（必填）</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell" bindtap='chooseLocation'>
+            <view class="weui-cell__bd">选择地址</view>
+            <view class="weui-cell__ft">{{address.name}}</view>
+          </view>
         </view>
     </view>
-</view> -->
 
-<view class="weui-cells__title">发起人姓名</view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入姓名" bindinput='bindInput' data-input-type='userName' />
+    <view class="weui-cells__title">活动时间（必填）</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">活动开始</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{tmAvtivityBegin}}" start="2019-01-01" end="2030-01-01" bindchange="bindDateChange" data-tm-type='tmAvtivityBegin'>
+                    <view class="weui-input">{{tmAvtivityBegin}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">报名开始</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{tmSignBegin}}" start="2019-01-01" end="2030-01-01" bindchange="bindDateChange" data-tm-type='tmSignBegin'>
+                    <view class="weui-input">{{tmSignBegin}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">报名结束</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{tmSignEnd}}" start="2019-01-01" end="2020-01-01" bindchange="bindDateChange" data-tm-type='tmSignEnd'>
+                    <view class="weui-input">{{tmSignEnd}}</view>
+                </picker>
+            </view>
         </view>
     </view>
-</view>
 
-<view class="weui-cells__title">发起人电话</view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入电话" bindinput='bindInput' data-input-type='userPhone' />
+    <!-- <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">是否公开报名人数</view>
+            <view class="weui-cell__ft">
+                <switch checked color='#005BAC' />
+            </view>
+        </view>
+    </view> -->
+
+    <view class="weui-cells__title">发起人姓名</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入姓名" bindinput='bindInput' data-input-type='userName' />
+            </view>
         </view>
     </view>
-</view>
 
-<view class="page__bd page__bd_spacing">
-  <button class="weui-btn" type="primary" bindtap='createActivity'>创建活动</button>
+    <view class="weui-cells__title">发起人电话</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入电话" bindinput='bindInput' data-input-type='userPhone' />
+            </view>
+        </view>
+    </view>
+
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn" type="primary" bindtap='createActivity'>创建活动</button>
+    </view>
+  </block>
 </view>

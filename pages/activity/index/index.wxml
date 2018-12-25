@@ -8,17 +8,17 @@
     <view class='card_1'>
       <view class='time'>
         <view class='tmBegin'>{{item.tmBegin}}</view>
-        <view class='week'>{{item.week}}</view>
+        <view class='week'>{{item.weekBegin}}</view>
       </view>
       <view class='avatar'>
-        <image src="{{item.avatar}}"></image>
+        <image src="{{item.user.avatar}}" mode='aspectFill'></image>
       </view>
     </view>
 
     <view class='card_2'>
       <view class='title'>{{item.title}}</view>
       <view class='logo'>
-        <image src="{{item.logo}}" mode="aspectFill"></image>
+        <image src="{{item.avatar}}" mode="aspectFill"></image>
       </view>
     </view>
   </view>

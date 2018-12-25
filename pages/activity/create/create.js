@@ -19,14 +19,15 @@ Page({
     tmSignEnd: '2019-01-01',
     address: null,
     userName: '',
-    userPhone: ''
+    userPhone: '',
+    userInfo: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -40,7 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.checkUserIsLogin()
   },
 
   /**
@@ -241,5 +242,24 @@ Page({
         title: '请上传活动头像'
       })
     }
+  },
+
+  checkUserIsLogin() {
+    if (this.data.userInfo == null) {
+      var that = this
+      api.getUserInfo({
+        success: function (res) {
+          that.setData({
+            userInfo: res.data.obj
+          })
+        }
+      })
+    }
+  },
+
+  goLogin: function () {
+    wx.navigateTo({
+      url: '/pages/user/login/login',
+    })
   }
 })

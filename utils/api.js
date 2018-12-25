@@ -30,6 +30,10 @@ class Api {
     params.url = '/api/hdqz/activity/publish'
     http.sendPost(params)
   }
+  getAllActivity(params) {
+    params.url = '/api/hdqz/activity/getall'
+    http.sendGet(params)
+  }
 }
 
 export { Api }
