@@ -210,6 +210,9 @@ Page({
                       showCancel: 'none',
                       confirmText: '去分享',
                       confirm: function () {
+                        var pages = getCurrentPages();
+                        var prepage = pages[pages.length - 2];
+                        prepage.onLoad()
                         wx.switchTab({
                           url: '/pages/activity/index/index',
                         })
