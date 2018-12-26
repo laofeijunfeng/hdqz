@@ -46,6 +46,14 @@ class Api {
     params.url = '/api/hdqz/activity/join'
     http.sendPost(params)
   }
+  getUserStatus(params) {
+    params.url = '/api/hdqz/activity/userstatus'
+    http.sendGet(params)
+  }
+  getActivityUser(params) {
+    params.url = '/api/hdqz/activity/getuser'
+    http.sendGet(params)
+  }
 }
 
 export { Api }

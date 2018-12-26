@@ -5,6 +5,7 @@
 .container .avatar {
   width: 100vw;
   height: 100vw;
+  vertical-align: bottom;
 }
 .container .title {
   font-size: 40rpx;
@@ -27,7 +28,7 @@
   margin: 0 40rpx;
   display: flex;
   align-items: center;
-  height: 80rpx;
+  height: 100rpx;
 }
 .container .user image {
   height: 35rpx;
@@ -39,23 +40,19 @@
   font-size: 28rpx;
 }
 .container .desc {
-  height: 80rpx;
+  height: 100rpx;
   font-size: 28rpx;
   margin: 0 40rpx;
   display: flex;
   align-items: center;
 }
 .container .address {
-  padding: 40rpx;
+  padding: 20rpx 40rpx;
   font-size: 28rpx;
-}
-.container .address map {
-  margin-top: 20rpx;
-  width: 670rpx;
 }
 
 .container .activity_user {
-  height: 80rpx;
+  height: 100rpx;
   font-size: 28rpx;
   margin: 0 40rpx;
   display: flex;

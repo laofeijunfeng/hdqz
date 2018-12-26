@@ -13,6 +13,7 @@
     <block wx:else>
       <text>【正在报名中】</text>
     </block>
+    <text>{{activity.description}}</text>
   </view>
   <view class='signup-data'>
     <view>活动时间：{{activity.beginDate}} ( {{activity.weekBegin}} )</view>
@@ -25,18 +26,16 @@
     <text>{{activity.user.nickname}}</text>
   </view>
   <view class='hr'></view>
-  <view class='desc'>{{activity.description}}</view>
-  <view class='hr'></view>
   <view class='address'>
     <text>活动地点：</text>
     <text>{{activity.address.address}}</text>
-    <map longitude="{{activity.address.longitude}}" latitude="{{activity.address.latitude}}" markers="{{addressMarkers}}"></map>
   </view>
   <view class='hr'></view>
-  <view class='activity_user'>
+  <view class='activity_user' bindtap='seeActivityUser'>
     <text>查看报名 ( {{activity.numOfUser}} )</text>
     <image src='/images/icon/more.png'></image>
   </view>
+  <view class='hr'></view>
 </view>
 
 <view class='bottom_btn'>
@@ -48,7 +47,8 @@
       <image src='/images/icon/share.png'></image>
     </view>
   </view>
-  <view class='card_2' bindtap='goJoin' data-activity-id="{{activity.id}}">我要报名</view>
+  <view wx:if="{{isJoin == 0}}" class='card_2' bindtap='goJoin' data-activity-id="{{activity.id}}">我要报名</view>
+  <view wx:else class='card_2' bindtap='checkSignUpInfo' data-activity-id="{{activity.id}}">查看报名信息</view>
 </view>
 
 <view wx:if="{{showShareMenu == 1}}" class='windowBg' bindtap='closeShareMenu'>

@@ -11,11 +11,7 @@ Page({
    */
   data: {
     showShareMenu: 0,
-    addressMarkers: [{
-      iconPath: '/images/icon/location.png',
-      width: 25,
-      height: 25
-    }]
+    isJoin: 0
   },
 
   /**
@@ -32,14 +28,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUserStatus()
   },
 
   /**
@@ -117,15 +113,30 @@ Page({
         activity.beginDate = formTime.formatTime(activity.tmBegin, 'M月D日')
         activity.nowTime = Date.parse(new Date())
         activity.address = JSON.parse(activity.address)
-
-        var addressMarkers = that.data.addressMarkers
-        addressMarkers[0].latitude = activity.address.latitude
-        addressMarkers[0].longitude = activity.address.longitude
         that.setData({
-          activity: activity,
-          addressMarkers: addressMarkers
+          activity: activity
         })
       }
+    })
+  },
+
+  getUserStatus: function () {
+    var that = this
+    api.getUserStatus({
+      data: {
+        activityId: this.data.activityId
+      },
+      success: function (res) {
+        that.setData({
+          isJoin: res.data.obj.isJoin
+        })
+      }
+    })
+  },
+
+  seeActivityUser: function () {
+    wx.navigateTo({
+      url: '/pages/activity/joinUser/joinUser?activityId=' + this.data.activityId,
     })
   },
 

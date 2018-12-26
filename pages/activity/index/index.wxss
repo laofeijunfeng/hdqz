@@ -67,4 +67,5 @@
   width: 670rpx;
   border-bottom-left-radius: 20rpx;
   border-bottom-right-radius: 20rpx;
+  vertical-align: bottom;
 }

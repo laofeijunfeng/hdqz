@@ -1,0 +1,24 @@
+<!--pages/activity/joinUser/joinUser.wxml-->
+<view class='container'>
+  <block wx:if="{{isLogin == 0}}">
+    <noLogin />
+  </block>
+  <block wx:else>
+    <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__hd">当前报名人数：{{total}}</view>
+            <view class="weui-panel__bd">
+              <block wx:for="{{users}}" wx:key="{{index}}">
+                <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="{{item.user.avatar}}" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{item.user.nickname}}</view>
+                        <view class="weui-media-box__desc">{{item.tmCreate}}</view>
+                    </view>
+                </view>
+              </block>
+            </view>
+        </view>
+  </block>
+</view>  

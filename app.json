@@ -8,7 +8,8 @@
     "pages/user/index/index",
     "pages/article/detail/detail",
     "pages/activity/create/create",
-    "pages/activity/join/join"
+    "pages/activity/join/join",
+    "pages/activity/joinUser/joinUser"
   ],
   "window": {
     "backgroundTextStyle": "light",
