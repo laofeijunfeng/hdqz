@@ -1,0 +1,11 @@
+/* pages/activity/joinUserInfo/joinUserInfo.wxss */
+page {
+  background-color: #F8F8F8;
+}
+
+.page__bd_spacing {
+  padding: 40rpx 30rpx;
+}
+.page__bd_spacing .weui-btn {
+  background-color: #E54A46;
+}

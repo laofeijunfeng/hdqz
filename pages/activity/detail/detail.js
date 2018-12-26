@@ -72,7 +72,7 @@ Page({
   onShareAppMessage: function () {
     var that = this
     return {
-      title: '一起去参加 | ' + this.data.activity.title,
+      title: this.data.activity.user.nickname + '想和你一起参加 | ' + this.data.activity.title,
       path: '/pages/activity/detail/detail?activityId=' + this.data.activity.id + '&shareId=' + this.data.shareId,
       imageUrl: this.data.activity.avatar,
       success: function (res) {
@@ -137,6 +137,12 @@ Page({
   seeActivityUser: function () {
     wx.navigateTo({
       url: '/pages/activity/joinUser/joinUser?activityId=' + this.data.activityId,
+    })
+  },
+
+  checkSignUpInfo: function () {
+    wx.navigateTo({
+      url: '/pages/activity/joinUserInfo/joinUserInfo?activityId=' + this.data.activityId,
     })
   },
 

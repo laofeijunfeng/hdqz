@@ -13,6 +13,9 @@
     <block wx:else>
       <text>【正在报名中】</text>
     </block>
+    <block wx:if="{{isJoin == 1}}">
+      <text>【已报名】</text>
+    </block>
     <text>{{activity.description}}</text>
   </view>
   <view class='signup-data'>

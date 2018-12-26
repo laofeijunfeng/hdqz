@@ -54,6 +54,14 @@ class Api {
     params.url = '/api/hdqz/activity/getuser'
     http.sendGet(params)
   }
+  getUserSignInfo(params) {
+    params.url = '/api/hdqz/activity/usersigninfo'
+    http.sendGet(params)
+  }
+  cancelSignUp(params) {
+    params.url = '/api/hdqz/activity/cancelsign'
+    http.sendPost(params)
+  }
 }
 
 export { Api }

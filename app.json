@@ -9,7 +9,8 @@
     "pages/article/detail/detail",
     "pages/activity/create/create",
     "pages/activity/join/join",
-    "pages/activity/joinUser/joinUser"
+    "pages/activity/joinUser/joinUser",
+    "pages/activity/joinUserInfo/joinUserInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
