@@ -258,11 +258,5 @@ Page({
         }
       })
     }
-  },
-
-  goLogin: function () {
-    wx.navigateTo({
-      url: '/pages/user/login/login',
-    })
   }
 })

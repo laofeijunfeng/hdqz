@@ -8,6 +8,7 @@
   position: fixed;
   top: 0;
   background-color: #ffffff;
+  border-bottom: 1rpx solid #F1F1F7;
 }
 .add .btn {
   height: 70rpx;

@@ -34,6 +34,18 @@ class Api {
     params.url = '/api/hdqz/activity/getall'
     http.sendGet(params)
   }
+  getActivityDetail(params) {
+    params.url = '/api/hdqz/activity/getdetail'
+    http.sendGet(params)
+  }
+  shareActivity(params) {
+    params.url = '/api/hdqz/activity/share'
+    http.sendPost(params)
+  }
+  joinActivity(params) {
+    params.url = '/api/hdqz/activity/join'
+    http.sendPost(params)
+  }
 }
 
 export { Api }

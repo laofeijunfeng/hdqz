@@ -1,8 +1,8 @@
-// pages/activity/index/index.js
+// pages/activity/join/join.js
 import { Api } from '../../../utils/api.js'
-import { FormTime } from '../../../utils/formTime.js'
+import { Prompt } from '../../../utils/prompt.js'
 let api = new Api()
-let formTime = new FormTime()
+let prompt = new Prompt()
 
 Page({
 
@@ -10,7 +10,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null,
+    name: '',
+    phone: ''
   },
 
   /**
@@ -18,18 +20,15 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      pageNum: 1,
-      pages: 1,
-      activity: []
+      activityId: options.activityId
     })
-    this.getAllActivity()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.checkUserIsLogin()
   },
 
   /**
@@ -64,7 +63,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getAllActivity()
+
   },
 
   /**
@@ -77,39 +76,43 @@ Page({
   /**
    * 自定义方法
    */
-  goDetail: function (e) {
-    wx.navigateTo({
-      url: '/pages/activity/detail/detail?activityId=' + e.currentTarget.dataset.activityId
-    })
-  },
-
-  goCreateActivity: function () {
-    wx.navigateTo({
-      url: '/pages/activity/create/create',
-    })
-  },
-
-  getAllActivity: function () {
-    var that = this
-    var pageNum = this.data.pageNum
-    var pages = this.data.pages
-    if (pageNum <= pages) {
-      api.getAllActivity({
-        data: {
-          pageNum: pageNum
-        },
+  checkUserIsLogin: function () {
+    if (this.data.userInfo == null) {
+      var that = this
+      api.getUserInfo({
         success: function (res) {
-          var activities = res.data.obj.activities
-          activities.forEach((item) => {
-            item.tmBegin = formTime.formatTime(item.tmBegin, 'Y年M月D')
-          })
           that.setData({
-            activity: that.data.activity.concat(activities),
-            pages: res.data.obj.pages,
-            pageNum: pageNum + 1
+            userInfo: res.data.obj
           })
         }
       })
     }
+  },
+
+  bindInput: function (e) {
+    var inputType = e.currentTarget.dataset.inputType
+    this.setData({
+      [`${inputType}`]: e.detail.value
+    })
+  },
+
+  joinActivity: function () {
+    var that = this
+    api.joinActivity({
+      data: {
+        activityId: this.data.activityId,
+        userName: this.data.name,
+        userPhone: this.data.phone
+      },
+      success: function(res) {
+        prompt.showToast({
+          title: '报名成功',
+          icon: 'success'
+        })
+        setTimeout(function () {
+          wx.navigateBack({})
+        }, 1500)
+      }
+    })
   }
 })

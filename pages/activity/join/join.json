@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "发起活动",
+  "navigationBarTitleText": "加入活动",
   "backgroundColor": "#F8F8F8",
   "backgroundTextStyle": "light",
   "usingComponents": {

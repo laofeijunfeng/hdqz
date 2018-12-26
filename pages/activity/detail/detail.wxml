@@ -1,12 +1,65 @@
 <!--pages/activity/detail/detail.wxml-->
+<view class='container'>
+  <image class='avatar' src="{{activity.avatar}}" mode='aspectFill'></image>
+  <view class='hr'></view>
+  <view class='title'>{{activity.title}}</view>
+  <view class='status'>
+    <block wx:if="{{activity.tmBegin < activity.nowTime || activity.isDisplay == 0 || activity.status == 0}}">
+      <text>【活动已结束】</text>
+    </block>
+    <block wx:elif="{{activity.signupEnd < activity.nowTime}}">
+      <text>【报名已结束】</text>
+    </block>
+    <block wx:else>
+      <text>【正在报名中】</text>
+    </block>
+  </view>
+  <view class='signup-data'>
+    <view>活动时间：{{activity.beginDate}} ( {{activity.weekBegin}} )</view>
+    <view>报名时间：{{activity.signupBeginDate}} - {{activity.signupEndDate}}</view>
+  </view>
+  <view class='hr'></view>
+  <view class='user'>
+    <text>发起人：</text>
+    <image src="{{activity.user.avatar}}"></image>
+    <text>{{activity.user.nickname}}</text>
+  </view>
+  <view class='hr'></view>
+  <view class='desc'>{{activity.description}}</view>
+  <view class='hr'></view>
+  <view class='address'>
+    <text>活动地点：</text>
+    <text>{{activity.address.address}}</text>
+    <map longitude="{{activity.address.longitude}}" latitude="{{activity.address.latitude}}" markers="{{addressMarkers}}"></map>
+  </view>
+  <view class='hr'></view>
+  <view class='activity_user'>
+    <text>查看报名 ( {{activity.numOfUser}} )</text>
+    <image src='/images/icon/more.png'></image>
+  </view>
+</view>
+
 <view class='bottom_btn'>
   <view class='card_1'>
     <view class='btn' bindtap='goHome'>
       <image src='/images/icon/home.png'></image>
     </view>
-    <view class='btn'>
+    <view class='btn' bindtap='shareActivity'>
       <image src='/images/icon/share.png'></image>
     </view>
   </view>
-  <view class='card_2' bindtap='goLogin'>我要报名</view>
+  <view class='card_2' bindtap='goJoin' data-activity-id="{{activity.id}}">我要报名</view>
+</view>
+
+<view wx:if="{{showShareMenu == 1}}" class='windowBg' bindtap='closeShareMenu'>
+  <view class='shareMenu' catchtap='doNothing'>
+    <view>
+      <button open-type='share'></button>
+      <text>微信好友</text>
+    </view>
+    <view bindtap='goSell'>
+      <image src='/images/icon/wechat_moments.png'></image>
+      <text>分享到朋友圈</text>
+    </view>
+  </view>
 </view>

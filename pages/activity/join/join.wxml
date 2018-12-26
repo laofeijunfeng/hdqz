@@ -1,0 +1,40 @@
+<!--pages/activity/join/join.wxml-->
+<view class='container'>
+  <block wx:if="{{userInfo == null}}">
+    <noLogin />
+  </block>
+  <block wx:else>
+    <view class="weui-cells weui-cells_after-title" style='margin-top: 100rpx;'>
+        <view class="weui-cell">
+            <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                <image src="{{userInfo.avatar}}" style="width: 50px; height: 50px; display: block"/>
+            </view>
+            <view class="weui-cell__bd">
+                <view>{{userInfo.nickname}}</view>
+                <view style="font-size: 13px;color: #888888;">惠大揭阳侨中校友会</view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells__title">姓名（可不填）</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入姓名" bindinput='bindInput' data-input-type='name' />
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-cells__title">电话（可不填）</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入电话" bindinput='bindInput' data-input-type='phone' />
+            </view>
+        </view>
+    </view>
+
+    <view class="page__bd page__bd_spacing">
+      <button class="weui-btn" type="primary" bindtap='joinActivity'>加入活动</button>
+    </view>
+  </block>
+</view>

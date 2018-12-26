@@ -5,3 +5,13 @@
   width: 100%;
   border-bottom: 1rpx solid #D6D6D6;
 }
+
+.windowBg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color:rgba(0,0,0,0.5);
+}

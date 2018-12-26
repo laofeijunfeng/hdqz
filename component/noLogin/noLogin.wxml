@@ -1,0 +1,6 @@
+<!--component/noLogin/noLogin.wxml-->
+<view class='no_login'>
+  <image src='/images/icon/no_login.png'></image>
+  <view class='desc'>用户未登录</view>
+  <view class='btn' bindtap='goLogin'>去登录</view>
+</view>
