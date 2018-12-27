@@ -60,9 +60,9 @@
       <button open-type='share'></button>
       <text>微信好友</text>
     </view>
-    <view bindtap='goSell'>
+    <view bindtap='goPoster'>
       <image src='/images/icon/wechat_moments.png'></image>
-      <text>分享到朋友圈</text>
+      <text>朋友圈海报</text>
     </view>
   </view>
 </view>

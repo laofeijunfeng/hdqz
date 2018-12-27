@@ -1,6 +1,8 @@
 // pages/home/index/index.js
 import { Api } from '../../../utils/api.js'
+import { Prompt } from '../../../utils/prompt.js'
 let api = new Api()
+let prompt = new Prompt()
 
 Page({
 
@@ -95,9 +97,12 @@ Page({
   },
 
   goArticleDetail: function (e) {
-    var articleId = e.currentTarget.dataset.articleId
-    wx.navigateTo({
-      url: '/pages/article/detail/detail?articleId=' + articleId,
+    // var articleId = e.currentTarget.dataset.articleId
+    // wx.navigateTo({
+    //   url: '/pages/article/detail/detail?articleId=' + articleId,
+    // })
+    prompt.showToast({
+      title: '功能正在开发中 ^_^'
     })
   }
 })

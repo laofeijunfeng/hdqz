@@ -29,7 +29,7 @@
     <image src='/images/icon/more.png'></image>
   </view>
 
-  <view class='card'>
+  <view class='card' bindtap='goMyCard'>
     <view>
       <image src='/images/icon/my_card.png'></image>
       <text>我的名片</text>

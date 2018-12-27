@@ -109,6 +109,11 @@ Page({
           title: '报名成功',
           icon: 'success'
         })
+        var pages = getCurrentPages()
+        var prevPage = pages[pages.length - 2]
+        prevPage.setData({
+          [`activity.numOfUser`]: prevPage.data.activity.numOfUser + 1
+        })
         setTimeout(function () {
           wx.navigateBack({})
         }, 1500)

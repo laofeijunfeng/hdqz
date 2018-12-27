@@ -22,8 +22,8 @@
     <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell">
             <view class="weui-cell__bd">
-                <textarea class="weui-textarea" placeholder="请输入简介" style="height: 3.3em" bindinput='bindInput' data-input-type='description' />
-                <view class="weui-textarea-counter">0/200</view>
+                <textarea class="weui-textarea" placeholder="请输入简介" style="height: 3.3em" bindinput='bindInput' data-input-type='description' maxlength='200' />
+                <view class="weui-textarea-counter">{{fontNum}}/200</view>
             </view>
         </view>
     </view>
@@ -45,7 +45,7 @@
                 <view class="weui-label">活动开始</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="date" value="{{tmAvtivityBegin}}" start="2019-01-01" end="2030-01-01" bindchange="bindDateChange" data-tm-type='tmAvtivityBegin'>
+                <picker mode="date" value="{{tmAvtivityBegin}}" start="2018-01-01" end="2050-01-01" bindchange="bindDateChange" data-tm-type='tmAvtivityBegin'>
                     <view class="weui-input">{{tmAvtivityBegin}}</view>
                 </picker>
             </view>
@@ -55,7 +55,7 @@
                 <view class="weui-label">报名开始</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="date" value="{{tmSignBegin}}" start="2019-01-01" end="2030-01-01" bindchange="bindDateChange" data-tm-type='tmSignBegin'>
+                <picker mode="date" value="{{tmSignBegin}}" start="2018-01-01" end="2050-01-01" bindchange="bindDateChange" data-tm-type='tmSignBegin'>
                     <view class="weui-input">{{tmSignBegin}}</view>
                 </picker>
             </view>
@@ -65,7 +65,7 @@
                 <view class="weui-label">报名结束</view>
             </view>
             <view class="weui-cell__bd">
-                <picker mode="date" value="{{tmSignEnd}}" start="2019-01-01" end="2020-01-01" bindchange="bindDateChange" data-tm-type='tmSignEnd'>
+                <picker mode="date" value="{{tmSignEnd}}" start="2018-01-01" end="2050-01-01" bindchange="bindDateChange" data-tm-type='tmSignEnd'>
                     <view class="weui-input">{{tmSignEnd}}</view>
                 </picker>
             </view>

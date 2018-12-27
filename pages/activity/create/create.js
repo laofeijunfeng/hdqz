@@ -2,8 +2,10 @@
 import { Api } from '../../../utils/api.js'
 import { config } from '../../../config.js'
 import { Prompt } from '../../../utils/prompt.js'
+import { FormTime } from '../../../utils/formTime.js'
 let api = new Api()
 let prompt = new Prompt()
+let formTime = new FormTime()
 
 Page({
 
@@ -14,20 +16,18 @@ Page({
     avatar: '',
     title: '',
     description: '',
-    tmAvtivityBegin: '2019-01-01',
-    tmSignBegin: '2019-01-01',
-    tmSignEnd: '2019-01-01',
     address: null,
     userName: '',
     userPhone: '',
-    userInfo: null
+    userInfo: null,
+    fontNum: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setTime()
   },
 
   /**
@@ -172,6 +172,11 @@ Page({
     this.setData({
       [`${inputType}`]: e.detail.value
     })
+    if (inputType == 'description') {
+      this.setData({
+        fontNum: e.detail.value.length
+      })
+    }
   },
 
   createActivity: function () {
@@ -258,5 +263,15 @@ Page({
         }
       })
     }
+  },
+
+  setTime: function () {
+    var timestamp = Date.parse(new Date())
+    var date = formTime.formatTime(timestamp, 'Y-M-D')
+    this.setData({
+      tmAvtivityBegin: date,
+      tmSignBegin: date,
+      tmSignEnd: date,
+    })
   }
 })

@@ -1,8 +1,10 @@
 // pages/activity/detail/detail.js
 import { Api } from '../../../utils/api.js'
 import { FormTime } from '../../../utils/formTime.js'
+import { Prompt } from '../../../utils/prompt.js'
 let api = new Api()
 let formTime = new FormTime()
+let prompt = new Prompt()
 
 Page({
 
@@ -18,8 +20,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var scene = options.scene
     this.setData({
-      activityId: options.activityId
+      activityId: scene == undefined || scene == 'undefined' ? options.activityId : scene
     })
     this.getActivityDetail(options.activityId)
   },
@@ -170,6 +173,12 @@ Page({
   goJoin: function (e) {
     wx.navigateTo({
       url: '/pages/activity/join/join?activityId=' + e.currentTarget.dataset.activityId,
+    })
+  },
+
+  goPoster: function () {
+    prompt.showToast({
+      title: '功能正在开发中 ^_^'
     })
   },
 

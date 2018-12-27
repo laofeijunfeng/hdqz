@@ -123,5 +123,11 @@ Page({
     wx.navigateTo({
       url: '/pages/activity/myPublish/myPublish',
     })
+  },
+
+  goMyCard: function () {
+    prompt.showToast({
+      title: '功能正在开发中 ^_^'
+    })
   }
 })
