@@ -62,6 +62,14 @@ class Api {
     params.url = '/api/hdqz/activity/cancelsign'
     http.sendPost(params)
   }
+  getMyJoinActivity(params) {
+    params.url = '/api/hdqz/activity/myjoin'
+    http.sendGet(params)
+  }
+  getMyPublicActivity(params) {
+    params.url = '/api/hdqz/activity/mypublic'
+    http.sendGet(params)
+  }
 }
 
 export { Api }

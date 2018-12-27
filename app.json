@@ -10,7 +10,9 @@
     "pages/activity/create/create",
     "pages/activity/join/join",
     "pages/activity/joinUser/joinUser",
-    "pages/activity/joinUserInfo/joinUserInfo"
+    "pages/activity/joinUserInfo/joinUserInfo",
+    "pages/activity/myJoin/myJoin",
+    "pages/activity/myPublish/myPublish"
   ],
   "window": {
     "backgroundTextStyle": "light",

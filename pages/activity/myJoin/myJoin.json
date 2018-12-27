@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#F1F1F7",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "backgroundColor": "#F1F1F7",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "noLogin": "/component/noLogin/noLogin"
+  }
+}

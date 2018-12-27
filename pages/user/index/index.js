@@ -89,7 +89,7 @@ Page({
     var that = this
     prompt.showModal({
       title: '提示',
-      content: '是否确定退出登陆',
+      content: '是否确定退出登录',
       confirmText: '退出',
       confirm: function () {
         wx.showLoading({
@@ -110,6 +110,18 @@ Page({
   login: function () {
     wx.navigateTo({
       url: '/pages/user/login/login',
+    })
+  },
+
+  goMyJoin: function () {
+    wx.navigateTo({
+      url: '/pages/activity/myJoin/myJoin',
+    })
+  },
+
+  goMyPublish: function () {
+    wx.navigateTo({
+      url: '/pages/activity/myPublish/myPublish',
     })
   }
 })

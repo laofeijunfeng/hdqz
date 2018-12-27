@@ -1,0 +1,9 @@
+/* pages/activity/myJoin/myJoin.wxss */
+page {
+  background-color: #F1F1F7;
+}
+
+.container .title {
+  margin: 80rpx;
+  font-size: 35rpx;
+}

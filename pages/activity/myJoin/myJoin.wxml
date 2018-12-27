@@ -1,0 +1,23 @@
+<!--pages/activity/myJoin/myJoin.wxml-->
+<view class='container'>
+  <view class='title'>我参与的活动</view>
+
+  <view class="weui-panel weui-panel_access">
+    <!-- <view class="weui-panel__hd">图文组合列表</view> -->
+    <view class="weui-panel__bd">
+      <block wx:for="{{activities}}" wx:key="{{index}}">
+        <navigator url="/pages/activity/detail/detail?activityId={{item.activity.id}}" open-type='navigate' class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.activity.avatar}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">
+                  {{item.cancel}}{{item.activity.title}}
+                </view>
+                <view class="weui-media-box__desc">活动时间：{{item.activity.tmBegin}}</view>
+            </view>
+        </navigator>
+      </block>  
+    </view>
+  </view>
+</view>
