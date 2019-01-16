@@ -104,5 +104,14 @@ Page({
     prompt.showToast({
       title: '功能正在开发中 ^_^'
     })
+  },
+
+  goPage: function (e) {
+    var index = e.currentTarget.dataset.index
+    if (index == 0) {
+      wx.navigateTo({
+        url: '/pages/home/bless/bless',
+      })
+    }
   }
 })

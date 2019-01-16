@@ -1,0 +1,30 @@
+<!--pages/home/bless/bless.wxml-->
+<view class='container'>
+  <block wx:if="{{userInfo == null}}">
+    <noLogin />
+  </block>
+  <block wx:else>
+    <view class='card_0'>
+      <view class='poster'>
+        <image src="{{imagePath}}" style="{{imagePath.length > 0 ? 'box-shadow: 10rpx 10rpx 20rpx gray' : '' }}"></image>
+      </view>
+
+      <canvas canvas-id="mycanvas"/>
+
+      <view class='btn'>
+        <view class='save' bindtap='savePoster'>
+          <view class='btn_1'>
+            <image src='/images/icon/save_poster.png'></image>
+          </view>
+          <text>保存福签</text>
+        </view>
+        <!-- <view class='refresh' bindtap='refreshPoster'>
+          <view class='btn_2'>
+            <image src='/images/icon/refresh_poster.png'></image>
+          </view>
+          <text>再求一签</text>
+        </view> -->
+      </view>
+    </view>
+  </block>
+</view>

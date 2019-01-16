@@ -11,7 +11,7 @@
         <view class='item'>
           <view class='hr'></view>
           <view class='title'>{{item.title}}</view>
-          <image src="{{item.url}}" mode='aspectFill'></image>
+          <image src="{{item.url}}" mode='aspectFill' bindtap='goPage' data-index="{{index}}"></image>
           <view class='hr'></view>
         </view>
       </swiper-item>

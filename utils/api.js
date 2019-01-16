@@ -70,6 +70,11 @@ class Api {
     params.url = '/api/hdqz/activity/mypublic'
     http.sendGet(params)
   }
+
+  getNewYearWish(params) {
+    params.url = '/api/hdqz/wish/getnewyear'
+    http.sendGet(params)
+  }
 }
 
 export { Api }

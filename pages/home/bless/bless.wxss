@@ -1,0 +1,54 @@
+/* pages/home/bless/bless.wxss */
+.card_0 {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://media.links2all.com/Fu_azkVjKpc2l28xs_M_JVZnZIQZ');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.poster {
+  display: flex;
+  justify-content: space-around;
+}
+.poster image {
+  width: 614rpx; 
+  height: 990rpx;
+  margin-top: 30rpx;
+}
+canvas {
+  width: 1228px; 
+  height: 1980px;
+  position: fixed;
+  top: 100vh;
+}
+
+.btn {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40rpx;
+}
+.save, .refresh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.save .btn_1, .refresh .btn_2 {
+  height: 80rpx;
+  width: 80rpx;
+  background-color: #eabe80;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50%;
+}
+.save .btn_1 image, .refresh .btn_2 image {
+  height: 30rpx;
+  width: 30rpx;
+}
+.save text, .refresh text {
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #c0c0c0;
+}

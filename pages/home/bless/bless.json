@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#eabe80",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "新年第一签",
+  "backgroundColor": "#eabe80",
+  "disableScroll": true,
+  "usingComponents": {
+    "noLogin": "/component/noLogin/noLogin"
+  }
+}

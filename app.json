@@ -12,7 +12,8 @@
     "pages/activity/joinUser/joinUser",
     "pages/activity/joinUserInfo/joinUserInfo",
     "pages/activity/myJoin/myJoin",
-    "pages/activity/myPublish/myPublish"
+    "pages/activity/myPublish/myPublish",
+    "pages/home/bless/bless"
   ],
   "window": {
     "backgroundTextStyle": "light",
