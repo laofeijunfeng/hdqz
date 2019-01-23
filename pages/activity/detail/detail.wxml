@@ -29,9 +29,13 @@
     <text>{{activity.user.nickname}}</text>
   </view>
   <view class='hr'></view>
-  <view class='address'>
-    <text>活动地点：</text>
-    <text>{{activity.address.address}}</text>
+  <view class='address' bindtap='gotoMap'>
+    <view class='address_desc'>
+      <text>活动地点：{{activity.address.address + activity.address.name}}</text>
+    </view>
+    <view class='address_btn'>
+      <image src='/images/icon/navigation.png'></image>
+    </view>
   </view>
   <view class='hr'></view>
   <view class='activity_user' bindtap='seeActivityUser'>

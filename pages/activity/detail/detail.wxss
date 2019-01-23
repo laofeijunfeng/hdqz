@@ -47,8 +47,23 @@
   align-items: center;
 }
 .container .address {
-  padding: 20rpx 40rpx;
+  display: flex;
   font-size: 28rpx;
+}
+.container .address .address_desc {
+  padding: 20rpx 40rpx;
+}
+.container .address .address_btn {
+  width: 150rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #005BAC;
+  color: white;
+}
+.container .address .address_btn image {
+  height: 50rpx;
+  width: 50rpx;
 }
 
 .container .activity_user {
@@ -112,6 +127,12 @@
   justify-content: space-around;
   align-items: center;
   color: #A1A1A1;
+  animation: mymove 0.3s;
+  -webkit-animation: mymove 0.3s; 
+}
+@keyframes mymove {
+  from {bottom: -224rpx;}
+  to {bottom: 0rpx;}
 }
 .windowBg .shareMenu view {
   display: flex;

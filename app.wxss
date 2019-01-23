@@ -14,4 +14,10 @@
   left: 0;
   z-index: 999;
   background-color:rgba(0,0,0,0.5);
+  animation: windowBg 0.3s;
+  -webkit-animation: windowBg 0.3s;
+}
+@keyframes windowBg {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

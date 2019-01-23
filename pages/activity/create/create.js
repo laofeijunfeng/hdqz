@@ -198,7 +198,7 @@ Page({
                 data.address = JSON.stringify(that.data.address)
                 data.signupBegin = that.data.tmSignBegin
                 data.signupEnd = that.data.tmSignEnd
-                data.tmBegin = that.data.tmAvtivityBegin
+                data.tmBegin = that.data.tmAvtivityDate + ' ' + that.data.tmAvtivityTime
                 if (that.data.userName.length > 0) {
                   data.userName = that.data.userName
                 }
@@ -269,7 +269,8 @@ Page({
     var timestamp = Date.parse(new Date())
     var date = formTime.formatTime(timestamp, 'Y-M-D')
     this.setData({
-      tmAvtivityBegin: date,
+      tmAvtivityDate: date,
+      tmAvtivityTime: '00:00',
       tmSignBegin: date,
       tmSignEnd: date,
     })

@@ -113,7 +113,7 @@ Page({
         var activity = res.data.obj.activity
         activity.signupBeginDate = formTime.formatTime(activity.signupBegin, 'M月D日')
         activity.signupEndDate = formTime.formatTime(activity.signupEnd, 'M月D日')
-        activity.beginDate = formTime.formatTime(activity.tmBegin, 'M月D日')
+        activity.beginDate = formTime.formatTime(activity.tmBegin, 'M月D日 h:m')
         activity.nowTime = Date.parse(new Date())
         activity.address = JSON.parse(activity.address)
         that.setData({
@@ -179,6 +179,15 @@ Page({
   goPoster: function () {
     prompt.showToast({
       title: '功能正在开发中 ^_^'
+    })
+  },
+
+  gotoMap: function () {
+    wx.openLocation({
+      latitude: this.data.activity.address.latitude,
+      longitude: this.data.activity.address.longitude,
+      name: this.data.activity.address.name,
+      address: this.data.activity.address.address
     })
   },
 
